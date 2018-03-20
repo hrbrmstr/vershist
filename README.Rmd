@@ -20,6 +20,7 @@ Core:
 - `apache_httpd_version_history`:	Retrieve Apache httpd Version Release History
 - `lighttpd_version_history`:	Retrieve lighttpd Version Release History
 - `mongodb_version_history`:	Retrieve MongoDB Version Release History
+- `mysql_version_history`:	Retrieve MySQL Version Release History
 - `nginx_version_history`:	Retrieve nginx Version Release History
 - `openresty_version_history`:	Retrieve openresty Version Release History
 - `sendmail_version_history`:	Retrieve sendmail Version Release History
@@ -49,36 +50,42 @@ packageVersion("vershist")
 
 Apache
 
-```{r apache}
+```{r apache, cache=TRUE}
 apache_httpd_version_history()
 ```
 
 lighttpd
 
-```{r}
+```{r lighttpd, cache=TRUE}
 lighttpd_version_history()
 ```
 
 mongodb
 
-```{r}
+```{r mongodb, cache=TRUE}
 mongodb_version_history()
+```
+
+MySQL
+
+```{r mysql, cache=TRUE}
+mysql_version_history()
 ```
 
 nginx
 
-```{r}
+```{r nginx, cache=TRUE}
 nginx_version_history()
 ```
 
 openresty
 
-```{r}
+```{r openresty, cache=TRUE}
 openresty_version_history()
 ```
 
 sendmail
 
-```{r}
+```{r sendmail, cache=TRUE}
 sendmail_version_history()
 ```

@@ -19,6 +19,7 @@ Core:
   - `lighttpd_version_history`: Retrieve lighttpd Version Release
     History
   - `mongodb_version_history`: Retrieve MongoDB Version Release History
+  - `mysql_version_history`: Retrieve MySQL Version Release History
   - `nginx_version_history`: Retrieve nginx Version Release History
   - `openresty_version_history`: Retrieve openresty Version Release
     History
@@ -108,6 +109,27 @@ mongodb_version_history()
     ##  9 0.9.7 2009-07-29     2009     0     9     7 ""         ""   
     ## 10 0.9.8 2009-08-14     2009     0     9     8 ""         ""   
     ## # ... with 184 more rows
+
+MySQL
+
+``` r
+mysql_version_history()
+```
+
+    ## # A tibble: 201 x 8
+    ##    vers    rls_date   rls_year major minor patch prerelease build
+    ##    <fct>   <date>        <dbl> <int> <int> <int> <chr>      <chr>
+    ##  1 5.0.15a 2005-10-25     2005     5     0    15 ""         a    
+    ##  2 5.0.15  2005-10-24     2005     5     0    15 ""         ""   
+    ##  3 5.0.16a 2005-11-19     2005     5     0    16 ""         a    
+    ##  4 5.0.16  2005-11-18     2005     5     0    16 ""         ""   
+    ##  5 5.0.17a 2005-12-16     2005     5     0    17 ""         a    
+    ##  6 5.0.17  2005-12-20     2005     5     0    17 ""         ""   
+    ##  7 5.0.18  2005-12-29     2005     5     0    18 ""         ""   
+    ##  8 5.0.19  2006-03-07     2006     5     0    19 ""         ""   
+    ##  9 5.0.20a 2006-04-20     2006     5     0    20 ""         a    
+    ## 10 5.0.20  2006-04-10     2006     5     0    20 ""         ""   
+    ## # ... with 191 more rows
 
 nginx
 
