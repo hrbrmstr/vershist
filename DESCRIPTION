@@ -1,0 +1,36 @@
+Package: vershist
+Type: Package
+Title: Collect Version Histories For Vendor Products
+Version: 0.1.0
+Date: 2018-03-20
+Authors@R: c(
+    person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
+           comment = c(ORCID = "0000-0001-5670-2640"))
+  )
+Maintainer: Bob Rudis <bob@rud.is>
+Description: Provides a set of functions to gather version histories of products 
+    (mainly software products) from their sources (generally websites).
+URL: https://github.com/hrbrmstr/vershist
+BugReports: https://github.com/hrbrmstr/vershist/issues
+SystemRequirements: C++11
+Encoding: UTF-8
+License: AGPL
+Suggests:
+    testthat,
+    covr
+Depends:
+    R (>= 3.2.0)
+Imports:
+    purrr,
+    rvest,
+    readr,
+    dplyr,
+    stringi,
+    semver,
+    lubridate,
+    utils,
+    xml2,
+    curl,
+    Rcpp
+RoxygenNote: 6.0.1.9000
+LinkingTo: Rcpp

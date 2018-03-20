@@ -1,0 +1,77 @@
+---
+output: rmarkdown::github_document
+---
+
+# vershist
+
+Collect Version Histories For Vendor Products
+
+## Description
+
+Provides a set of functions to gather version histories of products 
+(mainly software products) from their sources (generally websites).
+
+## What's Inside The Tin
+
+The following functions are implemented:
+
+Core:
+
+- `apache_httpd_version_history`:	Retrive Apache httpd Version Release History
+- `lighttpd_version_history`:	Retrive lighttpd Version Release History
+- `mongodb_version_history`:	Retrive MongoDB Version Release History
+- `nginx_version_history`:	Retrive nginx Version Release History
+- `sendmail_version_history`:	Retrive sendmail Version Release History
+
+Utility:
+
+- `is_valid`:	Test if semantic version strings are valid
+
+## Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/vershist")
+```
+
+```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+options(width=120)
+```
+
+## Usage
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(vershist)
+
+# current verison
+packageVersion("vershist")
+```
+
+Apache
+
+```{r}
+apache_httpd_version_history()
+```
+
+lighttpd
+
+```{r}
+lighttpd_version_history()
+```
+
+mongodb
+
+```{r}
+mongodb_version_history()
+```
+
+nginx
+
+```{r}
+nginx_version_history()
+```
+
+sendmail
+
+```{r}
+sendmail_version_history()
+```
