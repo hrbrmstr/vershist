@@ -1,4 +1,4 @@
-#' Retrive lighttpd Version Release History
+#' Retrieve lighttpd Version Release History
 #'
 #' Reads from the `lighttpd` releases and snapshot downloads to build a
 #' data frame of version release numbers and dates. The caller is responsible

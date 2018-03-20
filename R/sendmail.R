@@ -1,4 +1,4 @@
-#' Retrive sendmail Version Release History
+#' Retrieve sendmail Version Release History
 #'
 #' Reads <ftp://ftp.sendmail.org/pub/sendmail/"> to build a data frame of
 #' `sendmail` version release numbers and dates with semantic version

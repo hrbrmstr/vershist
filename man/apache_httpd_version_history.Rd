@@ -2,7 +2,7 @@
 % Please edit documentation in R/apache-httpd.R
 \name{apache_httpd_version_history}
 \alias{apache_httpd_version_history}
-\title{Retrive Apache httpd Version Release History}
+\title{Retrieve Apache httpd Version Release History}
 \usage{
 apache_httpd_version_history()
 }

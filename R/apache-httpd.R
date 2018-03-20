@@ -1,4 +1,4 @@
-#' Retrive Apache httpd Version Release History
+#' Retrieve Apache httpd Version Release History
 #'
 #' Reads <https://archive.apache.org/dist/httpd/> to build a data frame of
 #' Apache `httpd` version release numbers and dates with semantic version

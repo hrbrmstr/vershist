@@ -1,4 +1,4 @@
-#' Retrive nginx Version Release History
+#' Retrieve nginx Version Release History
 #'
 #' Reads <https://raw.githubusercontent.com/nginx/nginx/master/docs/xml/nginx/changes.xml>
 #' to build a data frame of nginx version release numbers and dates with semantic version

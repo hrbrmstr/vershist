@@ -2,7 +2,7 @@
 % Please edit documentation in R/mongodb.R
 \name{mongodb_version_history}
 \alias{mongodb_version_history}
-\title{Retrive MongoDB Version Release History}
+\title{Retrieve MongoDB Version Release History}
 \usage{
 mongodb_version_history()
 }

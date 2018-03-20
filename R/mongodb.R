@@ -1,4 +1,4 @@
-#' Retrive MongoDB Version Release History
+#' Retrieve MongoDB Version Release History
 #'
 #' Reads <https://www.mongodb.org/dl/linux"> to build a data frame of
 #' MongoDB version release numbers and dates with semantic version

@@ -14,12 +14,12 @@ The following functions are implemented:
 
 Core:
 
-  - `apache_httpd_version_history`: Retrive Apache httpd Version Release
+  - `apache_httpd_version_history`: Retrieve Apache httpd Version Release
     History
-  - `lighttpd_version_history`: Retrive lighttpd Version Release History
-  - `mongodb_version_history`: Retrive MongoDB Version Release History
-  - `nginx_version_history`: Retrive nginx Version Release History
-  - `sendmail_version_history`: Retrive sendmail Version Release History
+  - `lighttpd_version_history`: Retrieve lighttpd Version Release History
+  - `mongodb_version_history`: Retrieve MongoDB Version Release History
+  - `nginx_version_history`: Retrieve nginx Version Release History
+  - `sendmail_version_history`: Retrieve sendmail Version Release History
 
 Utility:
 

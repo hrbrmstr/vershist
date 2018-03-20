@@ -2,7 +2,7 @@
 % Please edit documentation in R/sendmail.R
 \name{sendmail_version_history}
 \alias{sendmail_version_history}
-\title{Retrive sendmail Version Release History}
+\title{Retrieve sendmail Version Release History}
 \usage{
 sendmail_version_history()
 }

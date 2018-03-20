@@ -2,7 +2,7 @@
 % Please edit documentation in R/lighttpd.R
 \name{lighttpd_version_history}
 \alias{lighttpd_version_history}
-\title{Retrive lighttpd Version Release History}
+\title{Retrieve lighttpd Version Release History}
 \usage{
 lighttpd_version_history()
 }

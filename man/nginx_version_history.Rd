@@ -2,7 +2,7 @@
 % Please edit documentation in R/nginx.R
 \name{nginx_version_history}
 \alias{nginx_version_history}
-\title{Retrive nginx Version Release History}
+\title{Retrieve nginx Version Release History}
 \usage{
 nginx_version_history()
 }
