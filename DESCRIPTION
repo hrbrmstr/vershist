@@ -31,6 +31,8 @@ Imports:
     utils,
     xml2,
     curl,
+    tidyr,
+    gh,
     Rcpp
 RoxygenNote: 6.0.1.9000
 LinkingTo: Rcpp

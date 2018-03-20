@@ -14,12 +14,16 @@ The following functions are implemented:
 
 Core:
 
-  - `apache_httpd_version_history`: Retrieve Apache httpd Version Release
+  - `apache_httpd_version_history`: Retrieve Apache httpd Version
+    Release History
+  - `lighttpd_version_history`: Retrieve lighttpd Version Release
     History
-  - `lighttpd_version_history`: Retrieve lighttpd Version Release History
   - `mongodb_version_history`: Retrieve MongoDB Version Release History
   - `nginx_version_history`: Retrieve nginx Version Release History
-  - `sendmail_version_history`: Retrieve sendmail Version Release History
+  - `openresty_version_history`: Retrieve openresty Version Release
+    History
+  - `sendmail_version_history`: Retrieve sendmail Version Release
+    History
 
 Utility:
 
@@ -125,6 +129,27 @@ nginx_version_history()
     ##  9 0.1.8 2004-11-20     2004     0     1     8 ""         ""   
     ## 10 0.1.9 2004-11-25     2004     0     1     9 ""         ""   
     ## # ... with 413 more rows
+
+openresty
+
+``` r
+openresty_version_history()
+```
+
+    ## # A tibble: 153 x 8
+    ##    vers     rls_date   rls_year major minor patch prerelease build
+    ##    <fct>    <date>        <dbl> <int> <int> <int> <chr>      <int>
+    ##  1 0.8.54.9 2011-07-08     2011     0     8    54 ""             9
+    ##  2 0.8.54.8 2011-07-01     2011     0     8    54 ""             8
+    ##  3 0.8.54.6 2011-06-15     2011     0     8    54 ""             6
+    ##  4 0.8.54.5 2011-05-25     2011     0     8    54 ""             5
+    ##  5 0.8.54.4 2011-05-13     2011     0     8    54 ""             4
+    ##  6 0.8.54.3 2011-03-29     2011     0     8    54 ""             3
+    ##  7 1.0.4.2  2011-08-09     2011     1     0     4 ""             2
+    ##  8 1.0.4.1  2011-07-30     2011     1     0     4 ""             1
+    ##  9 1.0.4.0  2011-07-12     2011     1     0     4 ""             0
+    ## 10 1.0.5.1  2011-09-04     2011     1     0     5 ""             1
+    ## # ... with 143 more rows
 
 sendmail
 
