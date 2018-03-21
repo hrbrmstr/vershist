@@ -16,6 +16,8 @@ Core:
 
   - `apache_httpd_version_history`: Retrieve Apache httpd Version
     Release History
+  - `google_chrome_version_history`: Retrieve Google Chrome Version
+    Release History
   - `lighttpd_version_history`: Retrieve lighttpd Version Release
     History
   - `memcached_version_history`: Retrieve memcached Version Release
@@ -71,6 +73,27 @@ apache_httpd_version_history()
     ##  9 1.3.12 2000-02-25     2000     1     3    12 ""         ""   
     ## 10 1.3.14 2000-10-10     2000     1     3    14 ""         ""   
     ## # ... with 19 more rows
+
+Google Chrome
+
+``` r
+google_chrome_version_history()
+```
+
+    ## # A tibble: 71 x 8
+    ##    vers    rls_date   rls_year major minor patch prerelease build
+    ##    <fct>   <date>        <dbl> <int> <int> <int> <chr>      <chr>
+    ##  1 0.2.149 2008-09-02    2008.     0     2   149 ""         ""   
+    ##  2 0.3.154 2008-10-29    2008.     0     3   154 ""         ""   
+    ##  3 0.4.154 2008-11-24    2008.     0     4   154 ""         ""   
+    ##  4 1.0.154 2008-12-11    2008.     1     0   154 ""         ""   
+    ##  5 2.0.172 2009-05-24    2009.     2     0   172 ""         ""   
+    ##  6 3.0.195 2009-10-12    2009.     3     0   195 ""         ""   
+    ##  7 4.0.249 2010-01-25    2010.     4     0   249 ""         ""   
+    ##  8 4.1.249 2010-03-17    2010.     4     1   249 ""         ""   
+    ##  9 5.0.375 2010-05-21    2010.     5     0   375 ""         ""   
+    ## 10 6.0.472 2010-09-02    2010.     6     0   472 ""         ""   
+    ## # ... with 61 more rows
 
 lighttpd
 

@@ -18,6 +18,7 @@ The following functions are implemented:
 Core:
 
 - `apache_httpd_version_history`:	Retrieve Apache httpd Version Release History
+- `google_chrome_version_history`:	Retrieve Google Chrome Version Release History
 - `lighttpd_version_history`:	Retrieve lighttpd Version Release History
 - `memcached_version_history`:	Retrieve memcached Version Release History
 - `mongodb_version_history`:	Retrieve MongoDB Version Release History
@@ -55,6 +56,12 @@ Apache
 
 ```{r apache, cache=TRUE}
 apache_httpd_version_history()
+```
+
+Google Chrome
+
+```{r chrome, cache=TRUE}
+google_chrome_version_history()
 ```
 
 lighttpd

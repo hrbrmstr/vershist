@@ -21,7 +21,7 @@ apache_httpd_version_history <- function() {
     dplyr::mutate(rls_year = lubridate::year(rls_date)) %>%
     dplyr::bind_cols(
       semver::parse_version(.$vers) %>%
-        as_data_frame()
+        dplyr::as_data_frame()
     ) %>%
     dplyr::arrange(major, minor, patch) %>%
     dplyr::mutate(vers = factor(vers, levels = vers))
