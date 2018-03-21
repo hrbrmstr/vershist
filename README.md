@@ -25,6 +25,7 @@ Core:
     History
   - `sendmail_version_history`: Retrieve sendmail Version Release
     History
+  - `sqlite_version_history`: Retrieve sqlite Version Release History
 
 Utility:
 
@@ -172,6 +173,27 @@ openresty_version_history()
     ##  9 1.0.4.0  2011-07-12     2011     1     0     4 ""             0
     ## 10 1.0.5.1  2011-09-04     2011     1     0     5 ""             1
     ## # ... with 143 more rows
+
+SQLite
+
+``` r
+sqlite_version_history()
+```
+
+    ## # A tibble: 285 x 8
+    ##    vers   rls_date   rls_year major minor patch prerelease build
+    ##    <fct>  <date>        <dbl> <int> <int> <int> <chr>      <chr>
+    ##  1 1.0    2000-08-17    2000.     1     0     0 ""         ""   
+    ##  2 1.0.1  2000-08-18    2000.     1     0     1 ""         ""   
+    ##  3 1.0.3  2000-08-22    2000.     1     0     3 ""         ""   
+    ##  4 1.0.4  2000-08-28    2000.     1     0     4 ""         ""   
+    ##  5 1.0.5  2000-09-14    2000.     1     0     5 ""         ""   
+    ##  6 1.0.8  2000-09-30    2000.     1     0     8 ""         ""   
+    ##  7 1.0.9  2000-10-09    2000.     1     0     9 ""         ""   
+    ##  8 1.0.10 2000-10-11    2000.     1     0    10 ""         ""   
+    ##  9 1.0.12 2000-10-17    2000.     1     0    12 ""         ""   
+    ## 10 1.0.13 2000-10-19    2000.     1     0    13 ""         ""   
+    ## # ... with 275 more rows
 
 sendmail
 

@@ -24,6 +24,7 @@ Core:
 - `nginx_version_history`:	Retrieve nginx Version Release History
 - `openresty_version_history`:	Retrieve openresty Version Release History
 - `sendmail_version_history`:	Retrieve sendmail Version Release History
+- `sqlite_version_history`:	Retrieve sqlite Version Release History
 
 Utility:
 
@@ -82,6 +83,12 @@ openresty
 
 ```{r openresty, cache=TRUE}
 openresty_version_history()
+```
+
+SQLite
+
+```{r sqlite, cache=TRUE}
+sqlite_version_history()
 ```
 
 sendmail
