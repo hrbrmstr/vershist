@@ -19,6 +19,7 @@ Core:
 
 - `apache_httpd_version_history`:	Retrieve Apache httpd Version Release History
 - `lighttpd_version_history`:	Retrieve lighttpd Version Release History
+- `memcached_version_history`:	Retrieve memcached Version Release History
 - `mongodb_version_history`:	Retrieve MongoDB Version Release History
 - `mysql_version_history`:	Retrieve MySQL Version Release History
 - `nginx_version_history`:	Retrieve nginx Version Release History
@@ -60,6 +61,12 @@ lighttpd
 
 ```{r lighttpd, cache=TRUE}
 lighttpd_version_history()
+```
+
+memcached
+
+```{r memcached, cache=TRUE}
+memcached_version_history()
 ```
 
 mongodb

@@ -18,6 +18,8 @@ Core:
     Release History
   - `lighttpd_version_history`: Retrieve lighttpd Version Release
     History
+  - `memcached_version_history`: Retrieve memcached Version Release
+    History
   - `mongodb_version_history`: Retrieve MongoDB Version Release History
   - `mysql_version_history`: Retrieve MySQL Version Release History
   - `nginx_version_history`: Retrieve nginx Version Release History
@@ -90,6 +92,27 @@ lighttpd_version_history()
     ##  9 1.4.32       2012-11-21 09:26:14     2012
     ## 10 1.4.30       2011-12-18 15:23:06     2011
     ## # ... with 87 more rows
+
+memcached
+
+``` r
+memcached_version_history()
+```
+
+    ## # A tibble: 49 x 9
+    ##    vers  rls_date   string rls_year major minor patch prerelease build
+    ##    <fct> <date>     <chr>     <dbl> <int> <int> <int> <chr>      <chr>
+    ##  1 1.2.7 2009-04-03 1.2.7     2009.     1     2     7 ""         ""   
+    ##  2 1.2.8 2009-04-11 1.2.8     2009.     1     2     8 ""         ""   
+    ##  3 1.4.0 2009-07-09 1.4.0     2009.     1     4     0 ""         ""   
+    ##  4 1.4.1 2009-08-29 1.4.1     2009.     1     4     1 ""         ""   
+    ##  5 1.4.2 2009-10-11 1.4.2     2009.     1     4     2 ""         ""   
+    ##  6 1.4.3 2009-11-07 1.4.3     2009.     1     4     3 ""         ""   
+    ##  7 1.4.4 2009-11-26 1.4.4     2009.     1     4     4 ""         ""   
+    ##  8 1.4.5 2010-04-03 1.4.5     2010.     1     4     5 ""         ""   
+    ##  9 1.4.6 2011-07-15 1.4.6     2011.     1     4     6 ""         ""   
+    ## 10 1.4.7 2011-08-16 1.4.7     2011.     1     4     7 ""         ""   
+    ## # ... with 39 more rows
 
 mongodb
 
