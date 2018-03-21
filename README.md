@@ -23,6 +23,7 @@ Core:
   - `nginx_version_history`: Retrieve nginx Version Release History
   - `openresty_version_history`: Retrieve openresty Version Release
     History
+  - `openssh_version_history`: Retrieve OpenSSH Version Release History
   - `sendmail_version_history`: Retrieve sendmail Version Release
     History
   - `sqlite_version_history`: Retrieve sqlite Version Release History
@@ -173,6 +174,27 @@ openresty_version_history()
     ##  9 1.0.4.0  2011-07-12     2011     1     0     4 ""             0
     ## 10 1.0.5.1  2011-09-04     2011     1     0     5 ""             1
     ## # ... with 143 more rows
+
+OpenSSH
+
+``` r
+openssh_version_history()
+```
+
+    ## # A tibble: 54 x 8
+    ##    vers  rls_date   rls_year major minor patch prerelease build
+    ##    <fct> <date>        <dbl> <int> <int> <int> <chr>      <chr>
+    ##  1 2.9.0 2001-04-29    2001.     2     9     0 ""         ""   
+    ##  2 2.9.9 2001-09-25    2001.     2     9     9 ""         ""   
+    ##  3 3.0.0 2001-11-06    2001.     3     0     0 ""         ""   
+    ##  4 3.0.1 2001-11-19    2001.     3     0     1 ""         ""   
+    ##  5 3.0.2 2002-12-04    2002.     3     0     2 ""         ""   
+    ##  6 3.1.0 2004-04-09    2004.     3     1     0 ""         ""   
+    ##  7 3.2.2 2002-05-16    2002.     3     2     2 ""         ""   
+    ##  8 3.2.3 2002-05-23    2002.     3     2     3 ""         ""   
+    ##  9 3.3.0 2002-06-21    2002.     3     3     0 ""         ""   
+    ## 10 3.4.0 2002-06-26    2002.     3     4     0 ""         ""   
+    ## # ... with 44 more rows
 
 SQLite
 

@@ -23,6 +23,7 @@ Core:
 - `mysql_version_history`:	Retrieve MySQL Version Release History
 - `nginx_version_history`:	Retrieve nginx Version Release History
 - `openresty_version_history`:	Retrieve openresty Version Release History
+- `openssh_version_history`:	Retrieve OpenSSH Version Release History
 - `sendmail_version_history`:	Retrieve sendmail Version Release History
 - `sqlite_version_history`:	Retrieve sqlite Version Release History
 
@@ -83,6 +84,12 @@ openresty
 
 ```{r openresty, cache=TRUE}
 openresty_version_history()
+```
+
+OpenSSH
+
+```{r openssh, cache=TRUE}
+openssh_version_history()
 ```
 
 SQLite

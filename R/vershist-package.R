@@ -14,7 +14,7 @@
 #' @importFrom stringi stri_match_first_regex stri_detect_fixed stri_detect_regex
 #' @importFrom stringi stri_replace_all_regex stri_replace_first_fixed stri_trans_tolower
 #' @importFrom stringi stri_extract_first_regex stri_sub stri_replace_first_regex
-#' @importFrom stringi stri_replace_all_fixed stri_split_fixed
+#' @importFrom stringi stri_replace_all_fixed stri_split_fixed stri_count_fixed
 #' @importFrom lubridate year mdy mdy_hms
 #' @importFrom readr read_lines
 #' @importFrom utils globalVariables
