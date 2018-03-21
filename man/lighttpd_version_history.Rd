@@ -10,6 +10,6 @@ lighttpd_version_history()
 Reads from the \code{lighttpd} releases and snapshot downloads to build a
 data frame of version release numbers and dates. The caller is responsible
 for extracting out the version components due to the non-standard
-semantic versioning used. The \code{\link[=is_valid]{is_valid()}} function can be used to test the
+semantic versioning used. The \code{\link[=is_valid_semver]{is_valid_semver()}} function can be used to test the
 validity of version strings.
 }

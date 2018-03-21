@@ -16,6 +16,8 @@ Core:
 
   - `apache_httpd_version_history`: Retrieve Apache httpd Version
     Release History
+  - `apple_ios_version_history`: Retrieve Apple iOS Version Release
+    History
   - `google_chrome_version_history`: Retrieve Google Chrome Version
     Release History
   - `lighttpd_version_history`: Retrieve lighttpd Version Release
@@ -34,7 +36,9 @@ Core:
 
 Utility:
 
-  - `is_valid`: Test if semantic version strings are valid
+  - `is_valid_semver`: Test if semantic version strings are valid
+  - `complete_semver`: Turn partial “valid” semantic version strings
+    into a complete semver-tri or quad strings
 
 ## Installation
 
@@ -52,6 +56,29 @@ packageVersion("vershist")
 ```
 
     ## [1] '0.1.0'
+
+Utility
+
+``` r
+versions <- c("steve", "1", "2.1", "3.2.1", "4.3.2.1")
+
+# Technically, a "valid" semver string is MAJOR.MINOR.PATCH
+is_valid_semver(versions)
+```
+
+    ## [1] FALSE  TRUE  TRUE  TRUE FALSE
+
+``` r
+complete_semver(versions)
+```
+
+    ## [1] "steve"   "1.0.0"   "2.1.0"   "3.2.1"   "4.3.2.1"
+
+``` r
+complete_semver(versions, quad=TRUE)
+```
+
+    ## [1] "steve"   "1.0.0.0" "2.1.0.0" "3.2.1.0" "4.3.2.1"
 
 Apache
 
@@ -73,6 +100,27 @@ apache_httpd_version_history()
     ##  9 1.3.12 2000-02-25     2000     1     3    12 ""         ""   
     ## 10 1.3.14 2000-10-10     2000     1     3    14 ""         ""   
     ## # ... with 19 more rows
+
+Apple iOS
+
+``` r
+apple_ios_version_history()
+```
+
+    ## # A tibble: 112 x 7
+    ##    vers  rls_date   major minor patch prerelease build
+    ##    <fct> <date>     <int> <int> <int> <chr>      <chr>
+    ##  1 1.0.0 2007-06-29     1     0     0 ""         ""   
+    ##  2 1.0.1 2007-07-31     1     0     1 ""         ""   
+    ##  3 1.0.2 2007-08-21     1     0     2 ""         ""   
+    ##  4 1.1.0 2007-09-14     1     1     0 ""         ""   
+    ##  5 1.1.1 2007-09-27     1     1     1 ""         ""   
+    ##  6 1.1.2 2007-11-12     1     1     2 ""         ""   
+    ##  7 1.1.3 2008-01-15     1     1     3 ""         ""   
+    ##  8 1.1.4 2008-02-26     1     1     4 ""         ""   
+    ##  9 1.1.5 2008-07-15     1     1     5 ""         ""   
+    ## 10 2.0.0 2008-07-11     2     0     0 ""         ""   
+    ## # ... with 102 more rows
 
 Google Chrome
 

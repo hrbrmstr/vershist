@@ -1,5 +1,7 @@
 ---
 output: rmarkdown::github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 # vershist
@@ -18,6 +20,7 @@ The following functions are implemented:
 Core:
 
 - `apache_httpd_version_history`:	Retrieve Apache httpd Version Release History
+- `apple_ios_version_history`:	Retrieve Apple iOS Version Release History
 - `google_chrome_version_history`:	Retrieve Google Chrome Version Release History
 - `lighttpd_version_history`:	Retrieve lighttpd Version Release History
 - `memcached_version_history`:	Retrieve memcached Version Release History
@@ -31,7 +34,8 @@ Core:
 
 Utility:
 
-- `is_valid`:	Test if semantic version strings are valid
+- `is_valid_semver`:	Test if semantic version strings are valid
+- `complete_semver`:	Turn partial "valid" semantic version strings into a complete semver-tri or quad strings
 
 ## Installation
 
@@ -52,10 +56,29 @@ library(vershist)
 packageVersion("vershist")
 ```
 
+Utility
+
+```{r utility}
+versions <- c("steve", "1", "2.1", "3.2.1", "4.3.2.1")
+
+# Technically, a "valid" semver string is MAJOR.MINOR.PATCH
+is_valid_semver(versions)
+
+complete_semver(versions)
+
+complete_semver(versions, quad=TRUE)
+```
+
 Apache
 
 ```{r apache, cache=TRUE}
 apache_httpd_version_history()
+```
+
+Apple iOS
+
+```{r apple_ios, cache=TRUE}
+apple_ios_version_history()
 ```
 
 Google Chrome

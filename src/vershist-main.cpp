@@ -15,12 +15,12 @@ bool one_is_valid(std::string v) {
 
 }
 
-//' Test if semantic version strings are valid
+//' Test if semantic version strings are valid tri-string
 //'
 //' @param v character verctor of version strings
 //' @export
 // [[Rcpp::export]]
-std::vector < bool > is_valid(std::vector < std::string > v) {
+std::vector < bool > is_valid_semver(std::vector < std::string > v) {
 
   std::vector < bool > ret(v.size());
 

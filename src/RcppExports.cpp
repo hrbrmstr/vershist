@@ -5,20 +5,20 @@
 
 using namespace Rcpp;
 
-// is_valid
-std::vector < bool > is_valid(std::vector < std::string > v);
-RcppExport SEXP _vershist_is_valid(SEXP vSEXP) {
+// is_valid_semver
+std::vector < bool > is_valid_semver(std::vector < std::string > v);
+RcppExport SEXP _vershist_is_valid_semver(SEXP vSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< std::vector < std::string > >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(is_valid(v));
+    rcpp_result_gen = Rcpp::wrap(is_valid_semver(v));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_vershist_is_valid", (DL_FUNC) &_vershist_is_valid, 1},
+    {"_vershist_is_valid_semver", (DL_FUNC) &_vershist_is_valid_semver, 1},
     {NULL, NULL, 0}
 };
 

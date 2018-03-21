@@ -3,7 +3,7 @@
 #' Reads from the `lighttpd` releases and snapshot downloads to build a
 #' data frame of version release numbers and dates. The caller is responsible
 #' for extracting out the version components due to the non-standard
-#' semantic versioning used. The [is_valid()] function can be used to test the
+#' semantic versioning used. The [is_valid_semver()] function can be used to test the
 #' validity of version strings.
 #'
 #' @md
