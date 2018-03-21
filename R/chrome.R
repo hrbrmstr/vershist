@@ -7,6 +7,8 @@
 #' ordered factor.
 #'
 #' @md
+#' @note This _only_ pulls the first release date and does not distinguish by OS.
+#'       If more granular data is needed, file an issue or PR.
 #' @export
 google_chrome_version_history <- function() {
 

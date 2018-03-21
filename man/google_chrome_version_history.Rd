@@ -13,3 +13,7 @@ strings parsed and separate fields added. The data frame is also arranged in
 order from lowest version to latest version and the \code{vers} column is an
 ordered factor.
 }
+\note{
+This \emph{only} pulls the first release date and does not distinguish by OS.
+If more granular data is needed, file an issue or PR.
+}
