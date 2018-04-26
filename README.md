@@ -33,6 +33,8 @@ Core:
   - `sendmail_version_history`: Retrieve sendmail Version Release
     History
   - `sqlite_version_history`: Retrieve sqlite Version Release History
+  - `tomcat_version_history`: Retrieve Apache Tomcat Version Release
+    History
 
 Utility:
 
@@ -336,3 +338,24 @@ sendmail_version_history()
     ## 14 8.14.9  2014-05-21     2014     8    14     9 ""         ""   
     ## 15 8.15.1  2014-12-06     2014     8    15     1 ""         ""   
     ## 16 8.15.2  2015-07-03     2015     8    15     2 ""         ""
+
+Tomcat
+
+``` r
+tomcat_version_history()
+```
+
+    ## # A tibble: 131 x 8
+    ##    vers   rls_date   rls_year major minor patch prerelease build
+    ##    <fct>  <date>        <dbl> <int> <int> <int> <chr>      <chr>
+    ##  1 5.5.32 2011-02-01    2011.     5     5    32 ""         ""   
+    ##  2 5.5.33 2011-02-10    2011.     5     5    33 ""         ""   
+    ##  3 5.5.34 2011-09-22    2011.     5     5    34 ""         ""   
+    ##  4 5.5.35 2012-01-16    2012.     5     5    35 ""         ""   
+    ##  5 5.5.36 2012-10-10    2012.     5     5    36 ""         ""   
+    ##  6 6.0.30 2011-01-13    2011.     6     0    30 ""         ""   
+    ##  7 6.0.32 2011-02-04    2011.     6     0    32 ""         ""   
+    ##  8 6.0.33 2011-08-18    2011.     6     0    33 ""         ""   
+    ##  9 6.0.35 2011-12-05    2011.     6     0    35 ""         ""   
+    ## 10 6.0.36 2012-10-19    2012.     6     0    36 ""         ""   
+    ## # ... with 121 more rows

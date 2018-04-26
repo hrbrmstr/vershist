@@ -31,6 +31,8 @@ Imports:
     utils,
     xml2,
     curl,
+    git2r,
+    httr,
     tidyr,
     gh,
     Rcpp
