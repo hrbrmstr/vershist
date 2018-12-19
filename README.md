@@ -30,6 +30,7 @@ Core:
   - `openresty_version_history`: Retrieve openresty Version Release
     History
   - `openssh_version_history`: Retrieve OpenSSH Version Release History
+  - `php_version_history`: Retrieve PHP Version Release History
   - `sendmail_version_history`: Retrieve sendmail Version Release
     History
   - `sqlite_version_history`: Retrieve sqlite Version Release History
@@ -57,7 +58,7 @@ library(vershist)
 packageVersion("vershist")
 ```
 
-    ## [1] '0.1.0'
+    ## [1] '0.2.0'
 
 Utility
 
@@ -291,6 +292,27 @@ openssh_version_history()
     ##  9 3.3.0 2002-06-21    2002.     3     3     0 ""         ""   
     ## 10 3.4.0 2002-06-26    2002.     3     4     0 ""         ""   
     ## # ... with 44 more rows
+
+PHP
+
+``` r
+php_version_history()
+```
+
+    ## # A tibble: 292 x 8
+    ##    vers  rls_date   rls_year major minor patch prerelease build
+    ##    <fct> <date>        <dbl> <int> <int> <int> <chr>      <chr>
+    ##  1 3.0.0 2000-10-20     2000     3     0     0 ""         ""   
+    ##  2 4.0.0 2000-05-22     2000     4     0     0 ""         ""   
+    ##  3 4.0.1 2000-06-28     2000     4     0     1 ""         ""   
+    ##  4 4.0.2 2000-08-29     2000     4     0     2 ""         ""   
+    ##  5 4.0.3 2000-10-11     2000     4     0     3 ""         ""   
+    ##  6 4.0.4 2000-12-19     2000     4     0     4 ""         ""   
+    ##  7 4.0.5 2001-04-30     2001     4     0     5 ""         ""   
+    ##  8 4.0.6 2001-06-23     2001     4     0     6 ""         ""   
+    ##  9 4.1.0 2001-12-10     2001     4     1     0 ""         ""   
+    ## 10 4.1.1 2001-12-26     2001     4     1     1 ""         ""   
+    ## # ... with 282 more rows
 
 SQLite
 

@@ -29,6 +29,7 @@ Core:
 - `nginx_version_history`:	Retrieve nginx Version Release History
 - `openresty_version_history`:	Retrieve openresty Version Release History
 - `openssh_version_history`:	Retrieve OpenSSH Version Release History
+- `php_version_history`:  Retrieve PHP Version Release History
 - `sendmail_version_history`:	Retrieve sendmail Version Release History
 - `sqlite_version_history`:	Retrieve sqlite Version Release History
 - `tomcat_version_history`:	Retrieve Apache Tomcat Version Release History
@@ -128,6 +129,12 @@ OpenSSH
 
 ```{r openssh, cache=TRUE}
 openssh_version_history()
+```
+
+PHP
+
+```{r php, cache=TRUE}
+php_version_history()
 ```
 
 SQLite
