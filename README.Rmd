@@ -21,6 +21,7 @@ Core:
 
 - `apache_httpd_version_history`:	Retrieve Apache httpd Version Release History
 - `apple_ios_version_history`:	Retrieve Apple iOS Version Release History
+- `etcd_version_history`:	Retrieve etcd Version Release History
 - `google_chrome_version_history`:	Retrieve Google Chrome Version Release History
 - `lighttpd_version_history`:	Retrieve lighttpd Version Release History
 - `memcached_version_history`:	Retrieve memcached Version Release History
@@ -81,6 +82,12 @@ Apple iOS
 
 ```{r apple_ios, cache=TRUE}
 apple_ios_version_history()
+```
+
+etcd iOS
+
+```{r etcd, cache=TRUE}
+etcd_version_history()
 ```
 
 Google Chrome

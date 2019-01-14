@@ -3,6 +3,7 @@
 export(apache_httpd_version_history)
 export(apple_ios_version_history)
 export(complete_semver)
+export(etcd_version_history)
 export(google_chrome_version_history)
 export(is_valid_semver)
 export(lighttpd_version_history)

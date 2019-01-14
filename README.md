@@ -18,6 +18,7 @@ Core:
     Release History
   - `apple_ios_version_history`: Retrieve Apple iOS Version Release
     History
+  - `etcd_version_history`: Retrieve etcd Version Release History
   - `google_chrome_version_history`: Retrieve Google Chrome Version
     Release History
   - `lighttpd_version_history`: Retrieve lighttpd Version Release
@@ -58,7 +59,7 @@ library(vershist)
 packageVersion("vershist")
 ```
 
-    ## [1] '0.2.0'
+    ## [1] '0.2.1'
 
 Utility
 
@@ -124,6 +125,27 @@ apple_ios_version_history()
     ##  9 1.1.5 2008-07-15     1     1     5 ""         ""   
     ## 10 2.0.0 2008-07-11     2     0     0 ""         ""   
     ## # ... with 102 more rows
+
+etcd iOS
+
+``` r
+etcd_version_history()
+```
+
+    ## # A tibble: 159 x 8
+    ##    vers      rls_date   rls_year major minor patch prerelease build
+    ##    <fct>     <date>        <dbl> <int> <int> <int> <chr>      <int>
+    ##  1 0.1.0     2013-08-11     2013     0     1     0 <NA>          NA
+    ##  2 0.1.1     2013-08-19     2013     0     1     1 <NA>          NA
+    ##  3 0.1.2     2013-10-10     2013     0     1     2 <NA>          NA
+    ##  4 0.2.0     2013-12-23     2013     0     2     0 <NA>          NA
+    ##  5 0.2.0-rc4 2013-12-23     2013     0     2     0 rc4           NA
+    ##  6 0.2.0-rc3 2013-12-16     2013     0     2     0 rc3           NA
+    ##  7 0.2.0-rc2 2013-12-06     2013     0     2     0 rc2           NA
+    ##  8 0.2.0-rc1 2013-11-14     2013     0     2     0 rc1           NA
+    ##  9 0.2.0-rc0 2013-10-17     2013     0     2     0 rc0           NA
+    ## 10 0.3.0     2014-02-07     2014     0     3     0 <NA>          NA
+    ## # … with 149 more rows
 
 Google Chrome
 

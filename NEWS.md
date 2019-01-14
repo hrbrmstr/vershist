@@ -1,3 +1,6 @@
+0.2.1
+* Support for etcd
+
 0.2.0
 * Support for PHP
 

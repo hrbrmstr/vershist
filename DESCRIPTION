@@ -1,8 +1,8 @@
 Package: vershist
 Type: Package
 Title: Collect Version Histories For Vendor Products
-Version: 0.2.0
-Date: 2018-12-19
+Version: 0.2.1
+Date: 2019-01-14
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640"))
@@ -10,8 +10,8 @@ Authors@R: c(
 Maintainer: Bob Rudis <bob@rud.is>
 Description: Provides a set of functions to gather version histories of products 
     (mainly software products) from their sources (generally websites).
-URL: https://github.com/hrbrmstr/vershist
-BugReports: https://github.com/hrbrmstr/vershist/issues
+URL: https://gitlab.com/hrbrmstr/vershist
+BugReports: https://gitlab.com/hrbrmstr/vershist/issues
 SystemRequirements: C++11
 Encoding: UTF-8
 License: AGPL
