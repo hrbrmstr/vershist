@@ -15,7 +15,7 @@
 #' @importFrom stringi stri_replace_all_regex stri_replace_first_fixed stri_trans_tolower
 #' @importFrom stringi stri_extract_first_regex stri_sub stri_replace_first_regex
 #' @importFrom stringi stri_replace_all_fixed stri_split_fixed stri_count_fixed stri_trim_both
-#' @importFrom stringi stri_extract_all_regex
+#' @importFrom stringi stri_extract_all_regex stri_replace_last_regex stri_replace_last_fixed
 #' @importFrom lubridate year mdy mdy_hms parse_date_time
 #' @importFrom readr read_lines
 #' @importFrom utils globalVariables

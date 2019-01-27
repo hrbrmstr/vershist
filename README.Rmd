@@ -23,6 +23,7 @@ Core:
 - `apple_ios_version_history`:	Retrieve Apple iOS Version Release History
 - `etcd_version_history`:	Retrieve etcd Version Release History
 - `google_chrome_version_history`:	Retrieve Google Chrome Version Release History
+- `isc_bind_version_history` : Retrieve ISC BIND Version Release History
 - `lighttpd_version_history`:	Retrieve lighttpd Version Release History
 - `memcached_version_history`:	Retrieve memcached Version Release History
 - `mongodb_version_history`:	Retrieve MongoDB Version Release History
@@ -94,6 +95,12 @@ Google Chrome
 
 ```{r chrome, cache=TRUE}
 google_chrome_version_history()
+```
+
+ISC BIND 
+
+```{r isc-bind, cache=TRUE}
+isc_bind_version_history()
 ```
 
 lighttpd

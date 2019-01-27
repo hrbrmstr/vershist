@@ -1,3 +1,6 @@
+0.2.2
+* Support for ISC BIND
+
 0.2.1
 * Support for etcd
 

@@ -21,6 +21,8 @@ Core:
   - `etcd_version_history`: Retrieve etcd Version Release History
   - `google_chrome_version_history`: Retrieve Google Chrome Version
     Release History
+  - `isc_bind_version_history` : Retrieve ISC BIND Version Release
+    History
   - `lighttpd_version_history`: Retrieve lighttpd Version Release
     History
   - `memcached_version_history`: Retrieve memcached Version Release
@@ -167,6 +169,27 @@ google_chrome_version_history()
     ##  9 5.0.375 2010-05-21    2010.     5     0   375 ""         ""   
     ## 10 6.0.472 2010-09-02    2010.     6     0   472 ""         ""   
     ## # ... with 61 more rows
+
+ISC BIND
+
+``` r
+isc_bind_version_history()
+```
+
+    ## # A tibble: 567 x 3
+    ##    vers     rls_date   rls_year
+    ##    <fct>    <date>        <dbl>
+    ##  1 9.0.0    2004-01-28     2004
+    ##  2 9.0.0b1  2004-01-28     2004
+    ##  3 9.0.0b2  2004-01-28     2004
+    ##  4 9.0.0b3  2004-01-28     2004
+    ##  5 9.0.0b4  2004-01-28     2004
+    ##  6 9.0.0b5  2004-01-28     2004
+    ##  7 9.0.0rc1 2004-01-28     2004
+    ##  8 9.0.0rc2 2004-01-28     2004
+    ##  9 9.0.0rc3 2004-01-28     2004
+    ## 10 9.0.0rc4 2004-01-28     2004
+    ## # … with 557 more rows
 
 lighttpd
 
