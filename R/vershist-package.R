@@ -9,11 +9,11 @@
 #' @author Bob Rudis (bob@@rud.is)
 #' @import semver
 #' @importFrom purrr keep discard map map_df %>% safely set_names
-#' @importFrom dplyr mutate rename select as_data_frame left_join bind_cols arrange
+#' @importFrom dplyr mutate rename select as_tibble left_join bind_cols arrange
 #' @importFrom dplyr rename progress_estimated mutate_at distinct data_frame
 #' @importFrom stringi stri_match_first_regex stri_detect_fixed stri_detect_regex
 #' @importFrom stringi stri_replace_all_regex stri_replace_first_fixed stri_trans_tolower
-#' @importFrom stringi stri_extract_first_regex stri_sub stri_replace_first_regex
+#' @importFrom stringi stri_extract_first_regex stri_sub stri_replace_first_regex stri_split_lines
 #' @importFrom stringi stri_replace_all_fixed stri_split_fixed stri_count_fixed stri_trim_both
 #' @importFrom stringi stri_extract_all_regex stri_replace_last_regex stri_replace_last_fixed
 #' @importFrom lubridate year mdy mdy_hms parse_date_time

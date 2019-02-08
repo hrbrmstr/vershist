@@ -1,8 +1,8 @@
 Package: vershist
 Type: Package
 Title: Collect Version Histories For Vendor Products
-Version: 0.2.2
-Date: 2019-01-27
+Version: 0.3.0
+Date: 2019-02-08
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640"))
@@ -14,17 +14,18 @@ URL: https://gitlab.com/hrbrmstr/vershist
 BugReports: https://gitlab.com/hrbrmstr/vershist/issues
 SystemRequirements: C++11
 Encoding: UTF-8
-License: AGPL
+License: MIT + file LICENSE
 Suggests:
     testthat,
-    covr
+    covr,
+    tibble (>= 2.0.1)
 Depends:
     R (>= 3.2.0)
 Imports:
     purrr,
     rvest,
     readr,
-    dplyr,
+    dplyr (>= 0.7.8),
     stringi,
     semver,
     lubridate,

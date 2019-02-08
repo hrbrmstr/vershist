@@ -15,7 +15,7 @@ sendmail_version_history <- function() {
   close(con)
 
   stri_match_first_regex(res, "([[:alpha:]]{3} [[:digit:]]{2}  [[:digit:]]{4}) (.*)") %>%
-    dplyr::as_data_frame() %>%
+    dplyr::as_tibble() %>%
     dplyr::select(-V1) %>%
     dplyr::rename(vers = V3, ts = V2) %>%
     dplyr::select(vers, ts) %>%
@@ -28,7 +28,7 @@ sendmail_version_history <- function() {
     dplyr::rename(rls_date = ts, rls_year = year) %>%
     dplyr::bind_cols(
       semver::parse_version(.$vers) %>%
-        dplyr::as_data_frame()
+        dplyr::as_tibble()
     ) %>%
     dplyr::arrange(major, minor, patch) %>%
     dplyr::mutate(vers = factor(vers, levels=vers))

@@ -54,7 +54,7 @@ apple_ios_version_history <- function() {
     ) %>%
     dplyr::bind_cols(
       semver::parse_version(.$vers) %>%
-        dplyr::as_data_frame()
+        dplyr::as_tibble()
     ) %>%
     dplyr::arrange(major, minor, patch) %>%
     dplyr::mutate(vers = factor(vers, levels = vers))

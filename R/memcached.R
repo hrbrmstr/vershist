@@ -39,14 +39,14 @@ memcached_version_history <- function() {
     purrr::keep(stri_detect_fixed, "[[ReleaseNotes") %>%
     stri_replace_first_regex(" \\* \\[\\[.*]] ", "") %>%
     stri_split_fixed(" ", 2, simplify = TRUE) %>%
-    dplyr::as_data_frame() %>%
+    dplyr::as_tibble() %>%
     purrr::set_names(c("vers", "rls_date")) %>%
     dplyr::mutate(string = stri_trim_both(vers)) %>%
     dplyr::mutate(rls_date = fix_memcached_dates(rls_date)) %>%
     dplyr::mutate(rls_year = lubridate::year(rls_date)) %>%
     dplyr::bind_cols(
       semver::parse_version(.$vers) %>%
-        dplyr::as_data_frame()
+        dplyr::as_tibble()
     ) %>%
     dplyr::arrange(major, minor, patch) %>%
     dplyr::mutate(vers = factor(vers, levels = vers))

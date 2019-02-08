@@ -1,3 +1,8 @@
+0.3.0
+* Significant improvements to Apache and nginx version retrievers
+* Swapped out as_tibble for as_data_frame
+* MIT license
+
 0.2.2
 * Support for ISC BIND
 
