@@ -19,27 +19,27 @@ The following functions are implemented:
 
 Core:
 
-- `apache_httpd_version_history`:	Retrieve Apache httpd Version Release History
-- `apple_ios_version_history`:	Retrieve Apple iOS Version Release History
-- `etcd_version_history`:	Retrieve etcd Version Release History
-- `google_chrome_version_history`:	Retrieve Google Chrome Version Release History
+- `apache_httpd_version_history`: Retrieve Apache httpd Version Release History
+- `apple_ios_version_history`:  Retrieve Apple iOS Version Release History
+- `etcd_version_history`: Retrieve etcd Version Release History
+- `google_chrome_version_history`:  Retrieve Google Chrome Version Release History
 - `isc_bind_version_history` : Retrieve ISC BIND Version Release History
-- `lighttpd_version_history`:	Retrieve lighttpd Version Release History
-- `memcached_version_history`:	Retrieve memcached Version Release History
-- `mongodb_version_history`:	Retrieve MongoDB Version Release History
-- `mysql_version_history`:	Retrieve MySQL Version Release History
-- `nginx_version_history`:	Retrieve nginx Version Release History
-- `openresty_version_history`:	Retrieve openresty Version Release History
-- `openssh_version_history`:	Retrieve OpenSSH Version Release History
+- `lighttpd_version_history`: Retrieve lighttpd Version Release History
+- `memcached_version_history`:  Retrieve memcached Version Release History
+- `mongodb_version_history`:  Retrieve MongoDB Version Release History
+- `mysql_version_history`:  Retrieve MySQL Version Release History
+- `nginx_version_history`:  Retrieve nginx Version Release History
+- `openresty_version_history`:  Retrieve openresty Version Release History
+- `openssh_version_history`:  Retrieve OpenSSH Version Release History
 - `php_version_history`:  Retrieve PHP Version Release History
-- `sendmail_version_history`:	Retrieve sendmail Version Release History
-- `sqlite_version_history`:	Retrieve sqlite Version Release History
-- `tomcat_version_history`:	Retrieve Apache Tomcat Version Release History
+- `sendmail_version_history`: Retrieve sendmail Version Release History
+- `sqlite_version_history`: Retrieve sqlite Version Release History
+- `tomcat_version_history`: Retrieve Apache Tomcat Version Release History
 
 Utility:
 
-- `is_valid_semver`:	Test if semantic version strings are valid
-- `complete_semver`:	Turn partial "valid" semantic version strings into a complete semver-tri or quad strings
+- `is_valid_semver`:  Test if semantic version strings are valid
+- `complete_semver`:  Turn partial "valid" semantic version strings into a complete semver-tri or quad strings
 
 ## Installation
 
