@@ -3,7 +3,14 @@ output: rmarkdown::github_document
 editor_options: 
   chunk_output_type: console
 ---
-
+```{r include=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  fig.retina = 2
+)
+options(width=120)
+```
 # vershist
 
 Collect Version Histories For Vendor Products
@@ -44,16 +51,16 @@ Utility:
 ## Installation
 
 ```{r eval=FALSE}
+devtools::install_git("https://git.sr.ht/~hrbrmstr/vershist")
+# OR
+devtools::install_gitlab("hrbrmstr/vershist")
+# OR
 devtools::install_github("hrbrmstr/vershist")
-```
-
-```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
-options(width=120)
 ```
 
 ## Usage
 
-```{r message=FALSE, warning=FALSE, error=FALSE}
+```{r}
 library(vershist)
 
 # current verison

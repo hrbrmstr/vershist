@@ -16,7 +16,7 @@ apple_ios_version_history <- function() {
 
   vers_nodes <- rvest::html_nodes(pg, xpath=".//th[contains(@id, '.') or contains(., '.')]")
 
-  dplyr::data_frame(
+  dplyr::tibble(
     vers = rvest::html_text(vers_nodes),
     rls_date = purrr::map_chr(
       vers_nodes,
@@ -40,13 +40,14 @@ apple_ios_version_history <- function() {
   c_d <- stri_extract_all_regex(more_complex$rls_date, "[[:alpha:]]{2,}[[:space:]]+[[:digit:]]{1,2},[[:space:]]+[[:digit:]]{4}")
 
   purrr::map2_df(c_v, c_d, ~{
-    dplyr::data_frame(
+    dplyr::tibble(
       vers = .x,
       rls_date = .y
     )
   }) -> more_complex
 
   dplyr::bind_rows(simple, more_complex) %>%
+    dplyr::mutate(vers = stri_trim_both(vers)) %>%
     dplyr::mutate(rls_date = lubridate::mdy(rls_date)) %>%
     dplyr::filter(!stri_detect_fixed(vers, "Beta")) %>%
     dplyr::mutate(
