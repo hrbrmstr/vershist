@@ -32,3 +32,20 @@ complete_semver <- function(x, quad = FALSE) {
   })
 
 }
+
+use_cache <- function() {
+  dir.exists("~/.vershist")
+}
+
+is_cached <- function(tech) {
+  dir.exists("~/.vershist") &&
+    file.exists(file.path("~/.vershist", sprintf("%s.rds", tech)))
+}
+
+read_from_cache <- function(tech) {
+  readRDS(file.path("~/.vershist", sprintf("%s.rds", tech)))
+}
+
+write_to_cache <- function(vers_dat, tech) {
+  saveRDS(vers_dat, file.path("~/.vershist", sprintf("%s.rds", tech)))
+}

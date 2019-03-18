@@ -4,7 +4,12 @@
 \alias{google_chrome_version_history}
 \title{Retrieve Google Chrome Version Release History}
 \usage{
-google_chrome_version_history()
+google_chrome_version_history(refresh = FALSE)
+}
+\arguments{
+\item{refresh}{if \code{TRUE} and there \code{~/.vershist} cache dir exists, will
+cause the version history database for apache to be rebuilt. Defaults
+to \code{FALSE} and has no effect if \code{~/.vershist} cache dir does not exist.}
 }
 \description{
 Reads \url{https://en.wikipedia.org/wiki/Google_Chrome_version_history"} to build a data

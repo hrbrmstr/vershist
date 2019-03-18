@@ -7,10 +7,16 @@
 #' ordered factor.
 #'
 #' @md
+#' @param refresh if `TRUE` and there `~/.vershist` cache dir exists, will
+#'        cause the version history database for apache to be rebuilt. Defaults
+#'        to `FALSE` and has no effect if `~/.vershist` cache dir does not exist.
 #' @note This _only_ pulls the first release date and does not distinguish by OS.
 #'       If more granular data is needed, file an issue or PR.
 #' @export
-google_chrome_version_history <- function() {
+google_chrome_version_history <- function(refresh = FALSE) {
+
+  tech <- "google-chrome"
+  if (use_cache() && (!refresh) && is_cached(tech)) return(read_from_cache(tech))
 
   pg <- xml2::read_html("https://en.wikipedia.org/wiki/Google_Chrome_version_history")
 
@@ -32,6 +38,10 @@ google_chrome_version_history <- function() {
         dplyr::as_tibble()
     ) %>%
     dplyr::arrange(major, minor, patch) %>%
-    dplyr::mutate(vers = factor(vers, levels = vers))
+    dplyr::mutate(vers = factor(vers, levels = vers)) -> out
+
+  if (use_cache() && (refresh || (!is_cached(tech)))) write_to_cache(out, tech)
+
+  out
 
 }

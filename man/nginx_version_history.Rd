@@ -4,7 +4,12 @@
 \alias{nginx_version_history}
 \title{Retrieve nginx Version Release History}
 \usage{
-nginx_version_history()
+nginx_version_history(refresh = FALSE)
+}
+\arguments{
+\item{refresh}{if \code{TRUE} and there \code{~/.vershist} cache dir exists, will
+cause the version history database for apache to be rebuilt. Defaults
+to \code{FALSE} and has no effect if \code{~/.vershist} cache dir does not exist.}
 }
 \description{
 Reads \url{https://raw.githubusercontent.com/nginx/nginx/master/docs/xml/nginx/changes.xml}
