@@ -1,6 +1,6 @@
 #' Retrieve Apache httpd Version Release History
 #'
-#' Reads <https://archive.apache.org/dist/httpd/> to build a data frame of
+#' Reads <https://github.com/apache/httpd> releases to build a data frame of
 #' Apache `httpd` version release numbers and dates with semantic version
 #' strings parsed and separate fields added. The data frame is also arranged in
 #' order from lowest version to latest version and the `vers` column is an
@@ -10,32 +10,68 @@
 #' @export
 apache_httpd_version_history <- function() {
 
-  ap <- readr::read_lines("https://archive.apache.org/dist/httpd/")
+  page <- gh::gh("/repos/apache/httpd/tags")
 
-  apd <- xml2::read_html(paste0(ap[grepl('"(httpd-|apache_)[[:digit:]]+\\.[[:digit:]]+\\.[[:digit:]]+\\.tar', ap)], collapse="\n"))
+  purrr::map_df(
+    page, ~{
+      list(
+        vers = .x$name,
+        rls_date = gh::gh(.x$commit$url)$commit$author$date # kinda dangerous
+      )
+    }) -> xdf
 
-  rvest::html_text(apd) %>%
-    stri_split_lines() %>%
-    unlist() %>%
-    stri_match_first_regex("([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})") %>%
-    .[,2] -> rls_dates
+  sgh_next <- purrr::safely(gh::gh_next) # to stop on gh_next() error
 
-  rvest::html_nodes(apd, "a") %>%
-    rvest::html_attr("href") %>%
-    stri_match_first_regex("[-_]([[:digit:]]+\\.[[:digit:]]+\\.[[:digit:]]+)\\.tar") %>%
-    .[,2] -> vers
+  while(TRUE) {
+    page <- sgh_next(page)
+    if (is.null(page$result)) break;
+    page <- page$result
+    dplyr::bind_rows(
+      xdf,
+      purrr::map_df(
+        page, ~{
+          list(
+            vers = .x$name,
+            rls_date = gh::gh(.x$commit$url)$commit$author$date # kinda dangerous
+          )
+        })
+    ) -> xdf
+  }
 
-  dplyr::tibble(
-    vers = vers,
-    rls_date = rls_dates
-  ) %>%
-    dplyr::distinct(vers, .keep_all=TRUE) %>%
-    mutate(rls_date = as.Date(rls_date)) %>%
-    mutate(rls_year = lubridate::year(rls_date)) %>%
-    dplyr::bind_cols(
-      semver::parse_version(.$vers) %>%
-        dplyr::as_tibble()
+  dplyr::mutate(xdf, vers = stri_replace_first_fixed(vers, "v", "")) %>%
+    dplyr::mutate(rls_date = as.Date(stri_sub(rls_date, 1, 10))) %>%
+    dplyr::mutate(rls_year = lubridate::year(rls_date)) %>%
+    tidyr::separate(vers, c("major", "minor", "patch", "build"), remove=FALSE) %>%
+    dplyr::mutate(prerelease = ifelse(
+      stri_detect_regex(build, "[[:alpha:]]"),
+      stri_extract_first_regex(build, "[[:alpha:]][[:alnum:]]+"),
+      ""
+    )) %>%
+    dplyr::mutate(build = stri_replace_first_regex(build, "[[:alpha:]][[:alnum:]]+", "")) %>%
+    dplyr::mutate_at(.vars=c("major", "minor", "patch", "build"), .funs=c(as.integer)) %>%
+    dplyr::add_row(
+      vers = "2.0.0",
+      rls_date = as.Date("2001-02-09"),
+      rls_year = 2001,
+      major = 2L, minor = 0L, patch = 0L,
+      prerelease = NA_character_, build = NA
     ) %>%
-    dplyr::arrange(major, minor, patch) %>%
-    dplyr::mutate(vers = factor(vers, levels = vers))
+    dplyr::add_row(
+      vers = "1.3.37",
+      rls_date = as.Date("2006-07-27"),
+      rls_year = 2006,
+      major = 1L, minor = 3L, patch = 37L,
+      prerelease = NA_character_, build = NA
+    ) %>%
+    dplyr::add_row(
+      vers = "1.3.41",
+      rls_date = as.Date("2009-10-03"),
+      rls_year = 2009,
+      major = 1L, minor = 3L, patch = 41L,
+      prerelease = NA_character_, build = NA
+    ) %>%
+    dplyr::arrange(rls_date) %>%
+    dplyr::mutate(vers = factor(vers, levels=vers)) %>%
+    dplyr::select(vers, rls_date, rls_year, major, minor, patch, prerelease, build) -> out
+
 }

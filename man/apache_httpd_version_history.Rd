@@ -7,7 +7,7 @@
 apache_httpd_version_history()
 }
 \description{
-Reads \url{https://archive.apache.org/dist/httpd/} to build a data frame of
+Reads \url{https://github.com/apache/httpd} releases to build a data frame of
 Apache \code{httpd} version release numbers and dates with semantic version
 strings parsed and separate fields added. The data frame is also arranged in
 order from lowest version to latest version and the \code{vers} column is an
