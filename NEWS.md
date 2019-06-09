@@ -1,3 +1,7 @@
+0.4.0
+* Add Exim version history retriever
+* Improved Apache & nginx version retriever functions
+
 0.3.0
 * Significant improvements to Apache and nginx version retrievers
 * Swapped out as_tibble for as_data_frame

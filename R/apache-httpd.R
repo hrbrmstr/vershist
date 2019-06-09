@@ -77,7 +77,7 @@ apache_httpd_version_history <- function(refresh = FALSE) {
         major = 1L, minor = 3L, patch = 41L,
         prerelease = NA_character_, build = NA
       ) %>%
-      dplyr::arrange(rls_date) %>%
+      dplyr::arrange(rls_date, major, minor, patch) %>%
       dplyr::mutate(vers = factor(vers, levels=vers)) %>%
       dplyr::select(
         vers, rls_date, rls_year, major, minor, patch, prerelease, build

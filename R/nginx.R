@@ -65,7 +65,7 @@ nginx_version_history <- function(refresh = FALSE) {
           prerelease = NA, build = NA
         )
       ) %>%
-      dplyr::arrange(major, minor, patch) %>%
+      dplyr::arrange(rls_date, major, minor, patch) %>%
       dplyr::mutate(vers = factor(vers, levels=vers)) %>%
       dplyr::select(
         vers, rls_date, rls_year, major, minor, patch, prerelease, build

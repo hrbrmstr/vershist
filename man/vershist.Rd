@@ -9,6 +9,15 @@
 Provides a set of functions to gather version histories of products
 (mainly software products) from their sources (generally websites).
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://gitlab.com/hrbrmstr/vershist}
+  \item Report bugs at \url{https://gitlab.com/hrbrmstr/vershist/issues}
+}
+
+}
 \author{
 Bob Rudis (bob@rud.is)
 }
+\keyword{internal}
