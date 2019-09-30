@@ -1,3 +1,6 @@
+0.4.1
+* Improved Exim version history retriever 
+
 0.4.0
 * Add Exim version history retriever
 * Improved Apache & nginx version retriever functions
