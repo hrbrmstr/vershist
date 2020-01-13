@@ -4,7 +4,12 @@
 \alias{etcd_version_history}
 \title{Retrieve etcd Version Release History}
 \usage{
-etcd_version_history()
+etcd_version_history(refresh = FALSE)
+}
+\arguments{
+\item{refresh}{if \code{TRUE} and there \verb{~/.vershist} cache dir exists, will
+cause the version history database for apache to be rebuilt. Defaults
+to \code{FALSE} and has no effect if \verb{~/.vershist} cache dir does not exist.}
 }
 \description{
 Reads \url{https://github.com/etcd-io/etcd/releases} to build a data frame of

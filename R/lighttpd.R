@@ -17,7 +17,7 @@ lighttpd_version_history <- function() {
   ) %>%
     purrr::map_df(~{
       pg <- read_html(.x)
-      dplyr::data_frame(
+      dplyr::tibble(
         vers = rvest::html_nodes(pg, xpath=".//tr/td[1]") %>%
           rvest::html_text(),
         ts = rvest::html_nodes(pg, xpath=".//tr/td[2]") %>%

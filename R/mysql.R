@@ -11,11 +11,17 @@
 #' alternate behaviour is required.
 #'
 #' @md
+#' @param refresh if `TRUE` and there `~/.vershist` cache dir exists, will
+#'        cause the version history database for apache to be rebuilt. Defaults
+#'        to `FALSE` and has no effect if `~/.vershist` cache dir does not exist.
 #' @note This is an *expensive* function as it does quite a bit of scraping.
-#'       Please consider using some sort of cache for the results unless
+#'       Please consider using the cache option for the results unless
 #'       absolutely necessary.
 #' @export
-mysql_version_history <- function() {
+mysql_version_history <- function(refresh = FALSE) {
+
+  tech <- "mysql"
+  if (use_cache() && (!refresh) && is_cached(tech)) return(read_from_cache(tech))
 
   pg <- xml2::read_html("https://downloads.mysql.com/archives/community/")
 
@@ -65,6 +71,11 @@ mysql_version_history <- function() {
     dplyr::mutate(prerelease = "") %>%
     dplyr::arrange(major, minor, patch) %>%
     dplyr::mutate(vers = factor(vers, levels=vers)) %>%
-    dplyr::select(vers, rls_date, rls_year, major, minor, patch, prerelease, build)
+    dplyr::select(vers, rls_date, rls_year, major, minor, patch, prerelease, build) -> out
+
+
+  if (use_cache() && (refresh || (!is_cached(tech)))) write_to_cache(out, tech)
+
+  out
 
 }

@@ -14,7 +14,7 @@ mongodb_version_history <- function() {
 
   pg <- xml2::read_html("https://www.mongodb.org/dl/linux")
 
-  dplyr::data_frame(
+  dplyr::tibble(
     vers = rvest::html_nodes(pg, xpath=".//tr/td[1]") %>%
       rvest::html_text(),
     ts = rvest::html_nodes(pg, xpath=".//tr/td[2]") %>%

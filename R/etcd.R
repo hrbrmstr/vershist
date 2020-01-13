@@ -7,9 +7,15 @@
 #' ordered factor.
 #'
 #' @md
+#' @param refresh if `TRUE` and there `~/.vershist` cache dir exists, will
+#'        cause the version history database for apache to be rebuilt. Defaults
+#'        to `FALSE` and has no effect if `~/.vershist` cache dir does not exist.
 #' @note This function requires a valid GitHub API key stored in `GITHUB_PAT`
 #' @export
-etcd_version_history <- function() {
+etcd_version_history <- function(refresh = FALSE) {
+
+  tech <- "etcd"
+  if (use_cache() && (!refresh) && is_cached(tech)) return(read_from_cache(tech))
 
   page <- gh::gh("/repos/etcd-io/etcd/tags")
 
@@ -55,7 +61,11 @@ etcd_version_history <- function() {
         dplyr::arrange(major, minor, patch) %>%
         dplyr::mutate(vers = factor(vers, levels=vers)) %>%
         dplyr::select(vers, rls_date, rls_year, major, minor, patch, prerelease, build)
-    )
+    ) -> out
   )
+
+  if (use_cache() && (refresh || (!is_cached(tech)))) write_to_cache(out, tech)
+
+  out
 
 }

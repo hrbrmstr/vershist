@@ -1,8 +1,8 @@
 Package: vershist
 Type: Package
 Title: Collect Version Histories For Vendor Products
-Version: 0.4.1
-Date: 2019-09-30
+Version: 0.4.2
+Date: 2020-01-13
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640"))
@@ -37,5 +37,5 @@ Imports:
     tidyr,
     gh,
     Rcpp
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 LinkingTo: Rcpp

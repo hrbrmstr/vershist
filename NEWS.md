@@ -1,3 +1,7 @@
+0.4.2
+* Fixed a cpl functions that use scraping (sites changed HTML)
+* Added caching/refresh capability to mysql and etcd given how expensive they are to compute
+
 0.4.1
 * Improved Exim version history retriever 
 

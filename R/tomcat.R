@@ -19,7 +19,7 @@ tomcat_version_history <- function() {
     purrr::map_df(~{
       pg <- .x
       rls <- rvest::html_nodes(pg, "h3[id*='Tomcat'][id*='Released']:not([id*='Conn']):not([id*='Native']):not([id*='Maven']):not([id*='alpha']):not([id*='beta'])")
-      dplyr::data_frame(
+      dplyr::tibble(
         vers = rvest::html_attr(rls, "id") %>%
           stri_replace_all_regex("^Tomcat_|_Released$", ""),
         rls_date = as.Date(rvest::html_nodes(rls, "span") %>%

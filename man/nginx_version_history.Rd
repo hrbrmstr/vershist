@@ -7,9 +7,9 @@
 nginx_version_history(refresh = FALSE)
 }
 \arguments{
-\item{refresh}{if \code{TRUE} and there \code{~/.vershist} cache dir exists, will
+\item{refresh}{if \code{TRUE} and there \verb{~/.vershist} cache dir exists, will
 cause the version history database for apache to be rebuilt. Defaults
-to \code{FALSE} and has no effect if \code{~/.vershist} cache dir does not exist.}
+to \code{FALSE} and has no effect if \verb{~/.vershist} cache dir does not exist.}
 }
 \description{
 Reads \url{https://raw.githubusercontent.com/nginx/nginx/master/docs/xml/nginx/changes.xml}

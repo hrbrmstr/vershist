@@ -13,15 +13,15 @@ openssh_version_history <- function() {
 
   pg <- xml2::read_html("https://www.openssh.com/releasenotes.html")
 
-  dplyr::data_frame(
+  dplyr::tibble(
 
     vers = rvest::html_nodes(
-      pg, xpath=".//h3/a[contains(@href, 'release') and not(contains(@name, 'p'))]"
+      pg, xpath=".//h3/a[contains(@href, 'release') and not(contains(@id, 'p'))]"
     ) %>%
-      rvest::html_attr("name"),
+      rvest::html_attr("id"),
 
     rls_date = rvest::html_nodes(
-      pg, xpath=".//h3/a[contains(@href, 'release') and not(contains(@name, 'p'))]/.."
+      pg, xpath=".//h3/a[contains(@href, 'release') and not(contains(@id, 'p'))]/.."
     ) %>%
       rvest::html_text() %>%
       stri_extract_first_regex("[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}")

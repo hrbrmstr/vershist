@@ -15,7 +15,7 @@ php_version_history <- function() {
 
   rls <- html_nodes(doc, xpath = ".//h2/following-sibling::ul")
 
-  dplyr::data_frame(
+  dplyr::tibble(
     vers = rvest::html_nodes(rls, xpath=".//preceding-sibling::h2") %>%
       rvest::html_text(trim=TRUE) %>%
       stringi::stri_replace_all_fixed("x", 0),

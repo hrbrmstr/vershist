@@ -4,7 +4,12 @@
 \alias{mysql_version_history}
 \title{Retrieve MySQL Version Release History}
 \usage{
-mysql_version_history()
+mysql_version_history(refresh = FALSE)
+}
+\arguments{
+\item{refresh}{if \code{TRUE} and there \verb{~/.vershist} cache dir exists, will
+cause the version history database for apache to be rebuilt. Defaults
+to \code{FALSE} and has no effect if \verb{~/.vershist} cache dir does not exist.}
 }
 \description{
 Scrapes \url{https://downloads.mysql.com/archives/community/} to build a data frame of
@@ -14,12 +19,12 @@ order from lowest version to latest version and the \code{vers} column is an
 ordered factor.
 }
 \details{
-The selector for versioning is "\code{Generic Linux (Architecture Independent)}" and
+The selector for versioning is "\verb{Generic Linux (Architecture Independent)}" and
 the first found date is used for the \code{rls_date}. File an issue or PR if
 alternate behaviour is required.
 }
 \note{
 This is an \emph{expensive} function as it does quite a bit of scraping.
-Please consider using some sort of cache for the results unless
+Please consider using the cache option for the results unless
 absolutely necessary.
 }

@@ -22,12 +22,14 @@ fix_memcached_dates <- function(x) {
 #' @export
 memcached_version_history <- function() {
 
-  td <- tempfile("wiki", fileext="git")
+  td <- tempfile(pattern = "wiki", fileext="git")
 
   dir.create(td)
 
   git2r::clone(
     url = "git@github.com:memcached/memcached.wiki.git",
+    bare = FALSE,
+    checkout = TRUE,
     local_path = td,
     credentials = git2r::cred_ssh_key(),
     progress = FALSE
@@ -35,10 +37,11 @@ memcached_version_history <- function() {
 
   on.exit(unlink(td, recursive = TRUE), add = TRUE)
 
-  readr::read_lines(file.path(repo@path, "ReleaseNotes.md")) %>%
+  readr::read_lines(file.path(sub("/\\.git$", "", repo$path), "ReleaseNotes.md")) %>%
     purrr::keep(stri_detect_fixed, "[[ReleaseNotes") %>%
     stri_replace_first_regex(" \\* \\[\\[.*]] ", "") %>%
     stri_split_fixed(" ", 2, simplify = TRUE) %>%
+    as.data.frame(stringsAsFactors = FALSE) %>%
     dplyr::as_tibble() %>%
     purrr::set_names(c("vers", "rls_date")) %>%
     dplyr::mutate(string = stri_trim_both(vers)) %>%
@@ -49,6 +52,7 @@ memcached_version_history <- function() {
         dplyr::as_tibble()
     ) %>%
     dplyr::arrange(major, minor, patch) %>%
+    dplyr::distinct() %>%
     dplyr::mutate(vers = factor(vers, levels = vers))
 
 }

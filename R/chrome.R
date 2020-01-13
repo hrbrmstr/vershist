@@ -20,8 +20,8 @@ google_chrome_version_history <- function(refresh = FALSE) {
 
   pg <- xml2::read_html("https://en.wikipedia.org/wiki/Google_Chrome_version_history")
 
-  dplyr::data_frame(
-    vers = rvest::html_nodes(pg, xpath=".//tr/td[1]") %>% rvest::html_text(),
+  dplyr::tibble(
+    vers = rvest::html_nodes(pg, xpath=".//tr/td[1]") %>% rvest::html_text(trim = TRUE),
     rls_date = rvest::html_nodes(pg, xpath=".//tr/td[2]") %>%
       rvest::html_text() %>%
       stri_extract_first_regex("[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}")
