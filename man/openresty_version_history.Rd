@@ -4,7 +4,12 @@
 \alias{openresty_version_history}
 \title{Retrieve openresty Version Release History}
 \usage{
-openresty_version_history()
+openresty_version_history(refresh = FALSE)
+}
+\arguments{
+\item{refresh}{if \code{TRUE} and there \verb{~/.vershist} cache dir exists, will
+cause the version history database for apache to be rebuilt. Defaults
+to \code{FALSE} and has no effect if \verb{~/.vershist} cache dir does not exist.}
 }
 \description{
 Reads \url{https://github.com/openresty/openresty/releases} to build a data frame of

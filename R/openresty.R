@@ -7,9 +7,15 @@
 #' ordered factor.
 #'
 #' @md
+#' @param refresh if `TRUE` and there `~/.vershist` cache dir exists, will
+#'        cause the version history database for apache to be rebuilt. Defaults
+#'        to `FALSE` and has no effect if `~/.vershist` cache dir does not exist.
 #' @note This function requires a valid GitHub API key stored in `GITHUB_PAT`
 #' @export
-openresty_version_history <- function() {
+openresty_version_history <- function(refresh = FALSE) {
+
+  tech <- "openresty"
+  if (use_cache() && (!refresh) && is_cached(tech)) return(read_from_cache(tech))
 
   page <- gh::gh("/repos/openresty/openresty/tags")
 
@@ -52,6 +58,11 @@ openresty_version_history <- function() {
     dplyr::mutate_at(.vars=c("major", "minor", "patch", "build"), .funs=c(as.integer)) %>%
     dplyr::arrange(major, minor, patch) %>%
     dplyr::mutate(vers = factor(vers, levels=vers)) %>%
-    dplyr::select(vers, rls_date, rls_year, major, minor, patch, prerelease, build)
+    dplyr::select(vers, rls_date, rls_year, major, minor, patch, prerelease, build) -> out
+
+
+  if (use_cache() && (refresh || (!is_cached(tech)))) write_to_cache(out, tech)
+
+  out
 
 }
