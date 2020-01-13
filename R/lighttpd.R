@@ -27,7 +27,7 @@ lighttpd_version_history <- function() {
     dplyr::filter(stri_detect_regex(vers, "\\.tar\\.gz$")) %>%
     dplyr::mutate(vers = stri_replace_all_regex(vers, "(^lighttpd-|\\.tar\\.gz$)", "")) %>%
     dplyr::mutate(
-      ts = lubridate::ymd_hms(ts),
+      ts = lubridate::ymd_hms(ts) %>% as.Date(),
       year = lubridate::year(ts)
     ) %>%
     dplyr::rename(rls_date = ts, rls_year = year)
