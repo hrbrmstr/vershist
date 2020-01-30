@@ -18,6 +18,7 @@ Core:
     Release History
   - `apple_ios_version_history`: Retrieve Apple iOS Version Release
     History
+  - `citrix_netscaler_version_history`: Citrix Netscaler ADC Version History
   - `etcd_version_history`: Retrieve etcd Version Release History
   - `google_chrome_version_history`: Retrieve Google Chrome Version
     Release History

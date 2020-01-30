@@ -1,4 +1,5 @@
 0.4.2
+* Added `citrix_netscaler_version_history()`
 * Fixed a cpl functions that use scraping (sites changed HTML)
 * Added caching/refresh capability to mysql and etcd given how expensive they are to compute
 
